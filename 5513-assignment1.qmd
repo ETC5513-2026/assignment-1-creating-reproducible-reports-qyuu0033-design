@@ -33,3 +33,15 @@ This study mainly examines whether marketing investment can lead to higher custo
 # Dataset Description
 
 This dataset contains customer-level information regarding marketing activities and purchasing behaviors. It includes variables such as advertising expenses, email engagement, coupon usage, and total purchase amount. These data represent the marketing activity situation of a certain quarter. This dataset has been cleaned, with missing values removed, and all numerical variables have been correctly formatted. Duplicate records (if any) have been checked and deleted. Additionally, to enhance clarity and consistency, the variables have been renamed.
+```{r}
+glimpse(market_data)
+summary(market_data)
+```
+
+I have figured out what each column of the data represents. Among them, I consider the "customer id" and "notes" columns to be unnecessary, so the "NA" values that appear in the "notes" column can be ignored.
+
+The dataset contained missing values in the purchase amount variable. These observations were removed to ensure the accuracy of the analysis. The proportion of missing data was relatively small and did not significantly impact the overall dataset.
+```{r}
+drop_na_data <- market_data %>%
+  drop_na(purchase_amount)
+```
