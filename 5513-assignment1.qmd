@@ -1,0 +1,35 @@
+---
+title: "Impact of Marketing Investment on Customer Spending"
+author: "Qingqing Yu"
+format:
+  html:
+    theme: cosmo
+  pdf: default
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+market_data <- read_csv("assignment-1-creating-reproducible-reports-qyuu0033-design/data/35026278_Qingqing Yu.csv")
+```
+
+# Introduction
+
+This report mainly focuses on the marketing strategies implemented by our company in the last quarter, such as advertising, email marketing, and coupons, and the marketing investment made. Based on the purchase records of customers, it examines whether higher marketing investment per customer has led to higher purchase amounts and whether there is a relationship between the two. The data mainly comes from the customer-level data of the last quarter.
+
+# Research Question
+
+This study mainly examines whether marketing investment can lead to higher customer purchasing power, and whether there is a certain relationship between the two. In essence, it is observing the relationship between total sales investment and customer purchasing power.
+
+# Dataset Description
+
+This dataset contains customer-level information regarding marketing activities and purchasing behaviors. It includes variables such as advertising expenses, email engagement, coupon usage, and total purchase amount. These data represent the marketing activity situation of a certain quarter. This dataset has been cleaned, with missing values removed, and all numerical variables have been correctly formatted. Duplicate records (if any) have been checked and deleted. Additionally, to enhance clarity and consistency, the variables have been renamed.
