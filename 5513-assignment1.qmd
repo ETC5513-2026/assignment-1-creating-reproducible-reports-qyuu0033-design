@@ -58,10 +58,8 @@ summary_table <- drop_na_data %>%
 knitr::kable(summary_table, caption = "Table 1 : Summary statistics")
 ```
 
-Figure 1 shows the distribution of marketing spend across customers. The distribution appears relatively even across the range, indicating that customers receive varying levels of marketing investment. There are no extreme outliers, suggesting that the data is suitable for further analysis of the relationship between marketing spend and purchase behaviour.
-Here, I have tried setting the bins to 20, 30, and 60. I found that 20 was too coarse, while 60 was too scattered. 30, however, seemed to be a more suitable value in my opinion.
 ```{r}
-{r}
+
 ggplot(drop_na_data, aes(x = marketing_spend)) +
   geom_histogram(bins = 30) +
   labs(
@@ -71,3 +69,18 @@ ggplot(drop_na_data, aes(x = marketing_spend)) +
   )
 
 ```
+
+Figure 1 shows the distribution of marketing spend across customers. The distribution appears relatively even across the range, indicating that customers receive varying levels of marketing investment. There are no extreme outliers, suggesting that the data is suitable for further analysis of the relationship between marketing spend and purchase behaviour.
+Here, I have tried setting the bins to 20, 30, and 60. I found that 20 was too coarse, while 60 was too scattered. 30, however, seemed to be a more suitable value in my opinion.
+```{r}
+ggplot(drop_na_data, aes(x = marketing_spend, y = purchase_amount)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Relationship Between Marketing Spend and Purchase Amount",
+    x = "Marketing Spend",
+    y = "Purchase Amount"
+  )
+```
+
+According to Figure 2, we can observe that the blue trend line is upward, which indicates that the higher the marketing investment, the higher the purchase amount. However, the strength of the relationship is of moderate intensity, suggesting that although there is a relationship between the two, there are more than just this factor influencing the purchasing power of customer service. Nevertheless, this proves the effectiveness of the marketing strategy.
