@@ -45,3 +45,29 @@ The dataset contained missing values in the purchase amount variable. These obse
 drop_na_data <- market_data %>%
   drop_na(purchase_amount)
 ```
+
+# Dataset Description subsection
+I also noticed that the way of writing the dates was different. Moreover, there were periods of time within the dates that did not fall within this quarter. The span of these periods was quite large. However, I didn't have an exact time point. And I was analyzing the relationship between marketing investment and customer purchasing power, which had nothing to do with the dates. Therefore, I also ignored this issue.
+```{r}
+summary_table <- drop_na_data %>%
+  summarise(
+    avg_spending = mean(purchase_amount),
+    avg_marketing = mean(marketing_spend),
+    avg_visits = mean(visits)
+  )
+knitr::kable(summary_table, caption = "Table 1 : Summary statistics")
+```
+
+Figure 1 shows the distribution of marketing spend across customers. The distribution appears relatively even across the range, indicating that customers receive varying levels of marketing investment. There are no extreme outliers, suggesting that the data is suitable for further analysis of the relationship between marketing spend and purchase behaviour.
+Here, I have tried setting the bins to 20, 30, and 60. I found that 20 was too coarse, while 60 was too scattered. 30, however, seemed to be a more suitable value in my opinion.
+```{r}
+{r}
+ggplot(drop_na_data, aes(x = marketing_spend)) +
+  geom_histogram(bins = 30) +
+  labs(
+    title = "Distribution of Marketing Spend",
+    x = "Marketing Spend",
+    y = "Number of Customers"
+  )
+
+```
