@@ -84,3 +84,7 @@ ggplot(drop_na_data, aes(x = marketing_spend, y = purchase_amount)) +
 ```
 
 According to Figure 2, we can observe that the blue trend line is upward, which indicates that the higher the marketing investment, the higher the purchase amount. However, the strength of the relationship is of moderate intensity, suggesting that although there is a relationship between the two, there are more than just this factor influencing the purchasing power of customer service. Nevertheless, this proves the effectiveness of the marketing strategy.
+
+# Data results
+
+This discovery indicates that increasing marketing investment might be an effective strategy to boost consumer spending, but it should be combined with other methods to achieve the best results.
