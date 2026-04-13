@@ -19,7 +19,7 @@ library(dplyr)
 ```
 
 ```{r}
-market_data <- read_csv("assignment-1-creating-reproducible-reports-qyuu0033-design/data/35026278_Qingqing Yu.csv")
+market_data <- read_csv("data/35026278_Qingqing Yu.csv")
 ```
 
 # Introduction
